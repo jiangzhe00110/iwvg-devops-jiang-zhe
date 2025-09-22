@@ -12,7 +12,8 @@
 ### Estado del código
 [![CI](https://github.com/jiangzhe00110/iwvg-devops-jiang-zhe/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/jiangzhe00110/iwvg-devops-jiang-zhe/actions/workflows/continuous-integration.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=es.upm.miw%3Aiwvg-devops)
-[![Render broken](https://iwvg-devops-latest.onrender.com/version-badge)](https://iwvg-devops-latest.onrender.com/swagger-ui.html)
+[![Render](https://img.shields.io/badge/Render-deployed-success)](https://iwvg-devops-jiang-zhe-latest.onrender.com)
+
 
 
 ### Tecnologías necesarias
