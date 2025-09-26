@@ -56,5 +56,14 @@ public class UsersDatabase {
                 .map(user -> user.getFamilyName().substring(0, 1))
                 .distinct();
     }
+    public Fraction findHighestFraction() {
+        return this.findAll()
+                .flatMap(user -> user.getFractions().stream())
+                // 过滤掉分母为 0 的非法分数，避免 NaN/异常
+                .filter(f -> f.getDenominator() != 0)
+                .max(java.util.Comparator.comparingDouble(
+                        f -> (double) f.getNumerator() / f.getDenominator()))
+                .orElse(null);
+    }
 }
 //1
