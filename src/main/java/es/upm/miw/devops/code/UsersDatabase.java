@@ -79,7 +79,7 @@ public class UsersDatabase {
         return this.findAll()
                 .filter(user -> user.getFractions().stream()
                         .anyMatch(f -> f.getNumerator() >= f.getDenominator()))
-                .map(User::getFamilyName);
+                .map(User::getFamilyName);//1
     }
 
 }
