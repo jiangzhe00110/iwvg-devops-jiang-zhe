@@ -48,6 +48,13 @@ public class UsersDatabase {
                 new User("5", "Antonio", "Blanco", fractions5),
                 new User("6", "Paula", "Torres", fractions6)
         );
+
+    }
+    public Stream<String> findUserFamilyNameInitialBySomeProperFraction() {
+        return this.findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
+                .map(user -> user.getFamilyName().substring(0, 1))
+                .distinct();
     }
 }
 //1
