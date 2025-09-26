@@ -75,5 +75,12 @@ public class UsersDatabase {
                 ))
                 .orElse(null);
     }
+    public Stream<String> findUserFamilyNameBySomeImproperFraction() {
+        return this.findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(f -> f.getNumerator() >= f.getDenominator()))
+                .map(User::getFamilyName);
+    }
+
 }
 //1

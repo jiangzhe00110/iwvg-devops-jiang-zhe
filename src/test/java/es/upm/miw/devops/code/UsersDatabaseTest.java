@@ -3,6 +3,7 @@ package es.upm.miw.devops.code;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Stream;
 
 
 public class UsersDatabaseTest {
@@ -33,4 +34,13 @@ public class UsersDatabaseTest {
         // 这里只检查结果不为 null
         System.out.println("Division result: " + result);
     }
+    @Test
+    void testFindUserFamilyNameBySomeImproperFraction() {
+        UsersDatabase db = new UsersDatabase();
+        Stream<String> result = db.findUserFamilyNameBySomeImproperFraction();
+        assertTrue(result.anyMatch(name -> name.equals("Fernandez")
+                || name.equals("Blanco")
+                || name.equals("Torres")));
+    }
+
 }
