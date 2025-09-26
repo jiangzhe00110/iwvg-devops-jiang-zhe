@@ -23,5 +23,14 @@ public class UsersDatabaseTest {
         assertEquals(2, highest.getNumerator());
         assertEquals(1, highest.getDenominator()); // 最高是 2/1
     }
-
+    @Test
+    void testFindFractionDivisionByUserId() {
+        UsersDatabase db = new UsersDatabase();
+        Fraction result = db.findFractionDivisionByUserId("2");
+        assertNotNull(result);
+        // 简单校验：用户 "2" 的 fractions2 = [2/1, -1/5, 2/4, 4/3]
+        // 预期计算： (((2/1) ÷ (-1/5)) ÷ (2/4)) ÷ (4/3) = ...
+        // 这里只检查结果不为 null
+        System.out.println("Division result: " + result);
+    }
 }

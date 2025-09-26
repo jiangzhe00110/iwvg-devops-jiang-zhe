@@ -65,5 +65,15 @@ public class UsersDatabase {
                         f -> (double) f.getNumerator() / f.getDenominator()))
                 .orElse(null);
     }
+    public Fraction findFractionDivisionByUserId(String id) {
+        return this.findAll()
+                .filter(user -> user.getId().equals(id))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce((a, b) -> new Fraction(
+                        a.getNumerator() * b.getDenominator(),
+                        a.getDenominator() * b.getNumerator()
+                ))
+                .orElse(null);
+    }
 }
 //1
